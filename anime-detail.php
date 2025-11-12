@@ -68,11 +68,14 @@ require_once 'includes/header.php';
                     <p><b>Studio:</b> <?= htmlspecialchars($anime_data['studio']) ?></p>
                     <p><b>Genre:</b> <?= implode(', ', $genre_names) ?></p>
                 </div>
-            </div>
-            
-            <!-- Synopsis -->
-            <div class="sinopc">
-                <p><?= nl2br(htmlspecialchars($anime_data['description'])) ?></p>
+                
+                <!-- Synopsis inside same container -->
+                <div class="sinopc-inside">
+                    <h3>Synopsis</h3>
+                    <p><?= nl2br(htmlspecialchars($anime_data['description'])) ?></p>
+                </div>
+                
+                <div style="clear: both;"></div>
             </div>
             
             <!-- Batch Download Section -->

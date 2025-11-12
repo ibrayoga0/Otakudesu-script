@@ -592,9 +592,38 @@ h2.jdlflm {
     width: 120px;
 }
 
+/* Synopsis inside anime info container */
+.sinopc-inside {
+    clear: both;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.sinopc-inside h3 {
+    color: #fff;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #555;
+}
+
+.sinopc-inside p {
+    line-height: 25px;
+    color: #adabab;
+    padding: 5px;
+    text-align: justify;
+    margin: 0;
+}
+
 .sinopc {
     clear: both;
     margin-bottom: 20px;
+    background-color: #2d2d2d;
+    padding: 15px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .sinopc p {
@@ -602,6 +631,7 @@ h2.jdlflm {
     color: #adabab;
     padding: 5px;
     text-align: justify;
+    margin: 0;
 }
 
 .episodelist {
