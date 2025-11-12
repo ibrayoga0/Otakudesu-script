@@ -1,0 +1,286 @@
+/* Custom Admin Styles for Otakudesu */
+
+/* Brand Customization */
+.brand-link {
+    border-bottom: 1px solid #4f5962;
+}
+
+.brand-text {
+    color: #c2c7d0 !important;
+}
+
+/* Sidebar Customization */
+.main-sidebar {
+    background: #343a40 !important;
+}
+
+.nav-sidebar .nav-item > .nav-link.active {
+    background-color: #00adff !important;
+    color: #fff !important;
+}
+
+.nav-sidebar .nav-item > .nav-link:hover {
+    background-color: #495057 !important;
+    color: #fff !important;
+}
+
+/* Custom Cards */
+.small-box {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.small-box .icon {
+    font-size: 60px;
+    opacity: 0.8;
+}
+
+/* Table Customizations */
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.badge {
+    font-size: 0.75em;
+}
+
+/* Timeline Customization */
+.timeline > div > .timeline-item {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border: none;
+}
+
+.timeline > div > .timeline-item > .timeline-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Custom Buttons */
+.btn-primary {
+    background-color: #00adff;
+    border-color: #00adff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #0096e6;
+    border-color: #0096e6;
+}
+
+/* Alert Customizations */
+.alert {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form Customizations */
+.form-control:focus {
+    border-color: #00adff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 173, 255, 0.25);
+}
+
+.input-group-text {
+    background-color: #00adff;
+    border-color: #00adff;
+    color: #fff;
+}
+
+/* Card Customizations */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 10px 10px 0 0 !important;
+    border: none;
+}
+
+.card-title {
+    color: #fff !important;
+    margin: 0;
+}
+
+/* Statistics Cards */
+.info-box {
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.info-box-icon {
+    border-radius: 10px 0 0 10px;
+}
+
+/* Pagination */
+.pagination {
+    margin: 0;
+}
+
+.page-link {
+    color: #00adff;
+    border-color: #dee2e6;
+}
+
+.page-link:hover {
+    color: #0096e6;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+    background-color: #00adff;
+    border-color: #00adff;
+}
+
+/* Navbar */
+.navbar-white {
+    background-color: #fff !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Custom Responsive */
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-left: 0 !important;
+    }
+    
+    .main-sidebar {
+        margin-left: -250px;
+    }
+    
+    .sidebar-open .main-sidebar {
+        margin-left: 0;
+    }
+}
+
+/* Loading Animation */
+.preloader {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Custom Scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #2c3e50;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #00adff;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #0096e6;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark Mode Toggle */
+.dark-mode .content-wrapper {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode .card {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+
+.dark-mode .table {
+    color: #fff;
+    background-color: #2d2d2d;
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+    border-color: #4a4a4a;
+}
+
+/* Success Messages */
+.swal2-popup {
+    border-radius: 15px;
+}
+
+.swal2-success .swal2-success-ring {
+    border-color: #00adff;
+}
+
+.swal2-confirm {
+    background-color: #00adff !important;
+}
+
+/* File Upload Area */
+.upload-area {
+    border: 2px dashed #00adff;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    background: #e9ecef;
+    border-color: #0096e6;
+}
+
+.upload-area.dragover {
+    background: #e3f2fd;
+    border-color: #00adff;
+}
+
+/* Status Badges */
+.badge-ongoing {
+    background-color: #28a745;
+}
+
+.badge-completed {
+    background-color: #6c757d;
+}
+
+.badge-upcoming {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Quick Stats */
+.quick-stats {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.quick-stats .stat-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.quick-stats .stat-number {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.quick-stats .stat-label {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
