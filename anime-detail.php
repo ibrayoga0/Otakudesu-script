@@ -57,21 +57,21 @@ require_once 'includes/header.php';
                 <img src="<?= get_anime_poster($anime_data['poster_url']) ?>" alt="<?= htmlspecialchars($anime_data['title']) ?>" />
                 
                 <div class="infozingle">
-                    <p><b>Judul:</b> <?= htmlspecialchars($anime_data['title']) ?></p>
-                    <p><b>Japanese:</b> <?= htmlspecialchars($anime_data['japanese_title']) ?></p>
-                    <p><b>Skor:</b> <?= number_format($anime_data['rating'], 1) ?></p>
-                    <p><b>Type:</b> <?= htmlspecialchars($anime_data['type']) ?></p>
-                    <p><b>Status:</b> <?= htmlspecialchars($anime_data['status']) ?></p>
-                    <p><b>Total Episode:</b> <?= count($episodes_list) ?></p>
-                    <p><b>Tahun:</b> <?= $anime_data['year'] ?></p>
-                    <p><b>Season:</b> <?= htmlspecialchars($anime_data['season']) ?></p>
-                    <p><b>Studio:</b> <?= htmlspecialchars($anime_data['studio']) ?></p>
-                    <p><b>Genre:</b> <?= implode(', ', $genre_names) ?></p>
+                    <p><b>Judul</b> : <?= htmlspecialchars($anime_data['title']) ?></p>
+                    <p><b>Japanese</b> : <?= htmlspecialchars($anime_data['japanese_title']) ?></p>
+                    <p><b>Skor</b> : <?= number_format($anime_data['rating'], 1) ?></p>
+                    <p><b>Produser</b> : <?= htmlspecialchars($anime_data['studio']) ?></p>
+                    <p><b>Type</b> : <?= htmlspecialchars($anime_data['type']) ?></p>
+                    <p><b>Status</b> : <?= htmlspecialchars($anime_data['status']) ?></p>
+                    <p><b>Total Episode</b> : <?= count($episodes_list) ?></p>
+                    <p><b>Durasi</b> : 23 Min.</p>
+                    <p><b>Tanggal Rilis</b> : <?= $anime_data['year'] ?></p>
+                    <p><b>Studio</b> : <?= htmlspecialchars($anime_data['studio']) ?></p>
+                    <p><b>Genre</b> : <?= implode(', ', $genre_names) ?></p>
                 </div>
                 
                 <!-- Synopsis inside same container -->
                 <div class="sinopc-inside">
-                    <h3>Synopsis</h3>
                     <p><?= nl2br(htmlspecialchars($anime_data['description'])) ?></p>
                 </div>
                 
