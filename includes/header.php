@@ -48,11 +48,14 @@
         <div class="center">
             <div id="cssmenu">
                 <ul>
-                    <li><a href="<?= site_url() ?>" class="<?= !isset($_GET['page']) ? 'active' : '' ?>">HOME</a></li>
-                    <li><a href="<?= site_url('anime-list.php') ?>" class="<?= basename($_SERVER['PHP_SELF']) == 'anime-list.php' ? 'active' : '' ?>">ANIME LIST</a></li>
-                    <li><a href="<?= site_url('genres.php') ?>" class="<?= basename($_SERVER['PHP_SELF']) == 'genres.php' ? 'active' : '' ?>">GENRE LIST</a></li>
-                    <li><a href="<?= site_url('ongoing.php') ?>" class="<?= basename($_SERVER['PHP_SELF']) == 'ongoing.php' ? 'active' : '' ?>">ON-GOING ANIME</a></li>
-                    <li><a href="<?= site_url('complete.php') ?>" class="<?= basename($_SERVER['PHP_SELF']) == 'complete.php' ? 'active' : '' ?>">COMPLETED ANIME</a></li>
+                    <?php 
+                    $current_page = basename($_SERVER['PHP_SELF']);
+                    ?>
+                    <li><a href="<?= site_url() ?>" class="<?= ($current_page == 'index.php') ? 'active' : '' ?>">HOME</a></li>
+                    <li><a href="<?= site_url('anime-list.php') ?>" class="<?= ($current_page == 'anime-list.php') ? 'active' : '' ?>">ANIME LIST</a></li>
+                    <li><a href="<?= site_url('genres.php') ?>" class="<?= ($current_page == 'genres.php') ? 'active' : '' ?>">GENRE LIST</a></li>
+                    <li><a href="<?= site_url('ongoing.php') ?>" class="<?= ($current_page == 'ongoing.php') ? 'active' : '' ?>">ON-GOING ANIME</a></li>
+                    <li><a href="<?= site_url('complete.php') ?>" class="<?= ($current_page == 'complete.php') ? 'active' : '' ?>">COMPLETED ANIME</a></li>
                     <li class="search-form">
                         <form action="<?= site_url('search.php') ?>" method="GET">
                             <input type="text" name="q" placeholder="Cari anime..." value="<?= isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '' ?>">

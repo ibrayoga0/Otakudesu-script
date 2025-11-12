@@ -54,7 +54,12 @@ include 'includes/header.php';
                                         
                                         <!-- Days Badge -->
                                         <div class="epztipe">
-                                            <i class="fa fa-star"></i> -1 hari
+                                            <?php
+                                            $day_names = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                                            $today_index = date('w');
+                                            $day_name = $day_names[$today_index];
+                                            ?>
+                                            <i class="fa fa-star"></i> <?= $day_name ?>
                                         </div>
                                         
                                         <!-- Anime Title -->

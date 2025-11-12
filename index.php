@@ -71,6 +71,12 @@ include 'includes/header.php';
                                         $latest_episode = $episode_count > 0 ? "Episode $episode_count" : "Coming Soon";
                                         $release_date = date('d M', strtotime($anime['updated_at']));
                                         $days_ago = floor((time() - strtotime($anime['updated_at'])) / (60 * 60 * 24));
+                                        
+                                        // Get day name based on current day
+                                        $day_names = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                                        $today_index = date('w'); // 0 = Sunday, 6 = Saturday
+                                        $target_day = ($today_index + $days_ago) % 7;
+                                        $day_name = $day_names[$target_day];
                                         ?>
                                         <li>
                                             <div class="thumb">
@@ -87,7 +93,7 @@ include 'includes/header.php';
                                                     
                                                     <!-- Days Badge -->
                                                     <div class="epztipe">
-                                                        <i class="fa fa-star"></i> <?= $days_ago ?> hari
+                                                        <i class="fa fa-star"></i> <?= $day_name ?>
                                                     </div>
                                                     
                                                     <!-- Anime Title -->

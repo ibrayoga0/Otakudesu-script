@@ -471,18 +471,19 @@ a:hover {
     padding: 4px;
     font-size: 12px;
     height: 23px;
-    width: 62.52px;
+    right: 0px;
     top: 0;
-    right: 0;
-    transform: translate(0, 300%);
+    transform: translate(0, 230%);
     border-radius: 4px 0 0 4px;
+    white-space: nowrap;
+    min-width: auto;
+    width: auto;
 }
 
 .epztipe i {
-    width: 11.16px;
-    height: 12px;
     font-size: 11px;
     margin-right: 3px;
+    vertical-align: middle;
 }
 
 /* Anime Title */
