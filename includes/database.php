@@ -9,6 +9,11 @@ class Database {
         $this->pdo = $pdo;
     }
     
+    // Add public method to get PDO instance
+    public function getPdo() {
+        return $this->pdo;
+    }
+    
     // Anime functions
     public function getOngoingAnime($limit = 15) {
         $sql = "SELECT a.*, COUNT(e.id) as episode_count 

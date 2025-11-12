@@ -1,53 +1,40 @@
 <?php
-require_once 'config.php';
+require_once 'includes/config.php';
+require_once 'includes/database.php';
 
 // Get selected letter (default to '#')
 $selected_letter = isset($_GET['letter']) ? strtoupper($_GET['letter']) : '#';
 
-// Sample anime data organized by letters
-$anime_by_letter = [
-    '#' => [
-        ['title' => '#Compass 2.0: Sentou Setsuri Kaiseki System'],
-    ],
-    '1' => [
-        ['title' => '100-man no Inochi no Ue ni Ore wa Tatteiru'],
-        ['title' => '100-man no Inochi no Ue ni Ore wa Tatteiru Season 2'],
-        ['title' => '11eyes'],
-        ['title' => '12-sai.: Chicchana Mune no Tokimeki'],
-        ['title' => '16bit Sensation: Another Layer'],
-    ],
-    '2' => [
-        ['title' => '2.43: Seiin Koukou Danshi Volley-bu'],
-        ['title' => '2.5-jigen no Ririsa'],
-        ['title' => '22/7'],
-    ],
-    '3' => [
-        ['title' => '3-gatsu no Lion'],
-        ['title' => '3-gatsu no Lion Season 2'],
-        ['title' => '3D Kanojo: Real Girl'],
-        ['title' => '3D Kanojo: Real Girl Season 2'],
-    ],
-    '4' => [
-        ['title' => '4-nin wa Sorezore Uso wo Tsuku'],
-    ],
-    '8' => [
-        ['title' => '86'],
-        ['title' => '86 Season 2'],
-    ],
-    '9' => [
-        ['title' => '91 Days'],
-    ],
-    'A' => [
-        ['title' => 'A-Channel'],
-        ['title' => 'A-Rank Party wo Ridatsu shita Ore wa'],
-        ['title' => 'AICO Incarnation'],
-        ['title' => 'Absolute Duo'],
-        ['title' => 'ACCA: 13-ku Kansatsu-ka'],
-        ['title' => 'Accel World'],
-        ['title' => 'Acchi Kocchi'],
-        ['title' => 'Acro Trip'],
-    ]
-];
+// Get all anime from database
+$all_anime_result = $db->getPdo()->query("SELECT title, slug FROM anime ORDER BY title ASC");
+$all_anime = $all_anime_result->fetchAll();
+
+// Organize anime by first letter
+$anime_by_letter = [];
+foreach ($all_anime as $anime) {
+    $first_char = strtoupper(substr($anime['title'], 0, 1));
+    
+    // Group numbers and special characters as '#'
+    if (!ctype_alpha($first_char)) {
+        $first_char = '#';
+    }
+    
+    if (!isset($anime_by_letter[$first_char])) {
+        $anime_by_letter[$first_char] = [];
+    }
+    
+    $anime_by_letter[$first_char][] = $anime;
+}
+
+// Sort the keys
+ksort($anime_by_letter);
+
+// Move '#' to the beginning
+if (isset($anime_by_letter['#'])) {
+    $hash_group = $anime_by_letter['#'];
+    unset($anime_by_letter['#']);
+    $anime_by_letter = ['#' => $hash_group] + $anime_by_letter;
+}
 
 // Get all available letters/numbers for navigation
 $all_letters = array_keys($anime_by_letter);
@@ -99,7 +86,7 @@ include 'includes/header.php';
                                     <!-- First Column -->
                                     <?php foreach ($first_half as $anime): ?>
                                         <div class="jdlbar">
-                                            <a href="<?= site_url('anime-detail.php?id=1') ?>">
+                                            <a href="<?= site_url('anime-detail.php?slug=' . $anime['slug']) ?>">
                                                 <?= htmlspecialchars($anime['title']) ?>
                                             </a>
                                         </div>
@@ -108,7 +95,7 @@ include 'includes/header.php';
                                     <!-- Second Column -->
                                     <?php foreach ($second_half as $anime): ?>
                                         <div class="jdlbar">
-                                            <a href="<?= site_url('anime-detail.php?id=1') ?>">
+                                            <a href="<?= site_url('anime-detail.php?slug=' . $anime['slug']) ?>">
                                                 <?= htmlspecialchars($anime['title']) ?>
                                             </a>
                                         </div>

@@ -1,6 +1,5 @@
 <?php
-ob_start();
-require_once 'config.php';
+require_once 'includes/config.php';
 require_once 'includes/database.php';
 
 $page_title = 'Otaku Desu - Nonton Anime Subtitle Indonesia';
@@ -9,7 +8,6 @@ $page_description = 'Nonton anime subtitle Indonesia terlengkap dan terbaru. Str
 // Get anime data
 $ongoing_anime = $db->getOngoingAnime(15);
 $completed_anime = $db->getCompletedAnime(15);
-$random_anime = $db->getRandomAnime(5);
 
 include 'includes/header.php';
 ?>
@@ -76,10 +74,10 @@ include 'includes/header.php';
                                         ?>
                                         <li>
                                             <div class="thumb">
-                                                <a href="<?= page_url('anime/' . $anime['slug']) ?>">
-                                                <img src="http://otakudesu.test/assets/images/no-image.jpg" 
-                                                     alt="<?= htmlspecialchars($anime['title']) ?>" 
-                                                     class="attachment-thumb size-thumb wp-post-image">                                                    <!-- Episode Badge -->
+                                                <a href="<?= site_url('anime-detail.php?slug=' . $anime['slug']) ?>">
+                                                    <img src="<?= get_anime_poster($anime['poster_url']) ?>" 
+                                                         alt="<?= htmlspecialchars($anime['title']) ?>" 
+                                                         class="attachment-thumb size-thumb wp-post-image">                                                    <!-- Episode Badge -->
                                                     <div class="epz">
                                                         <span class="dashicons dashicons-desktop"></span> <?= $latest_episode ?>
                                                     </div>
@@ -156,8 +154,8 @@ include 'includes/header.php';
                                             ?>
                                             <li>
                                                 <div class="thumb">
-                                                    <a href="<?= page_url('anime/' . $anime['slug']) ?>">
-                                                        <img src="http://otakudesu.test/assets/images/no-image.jpg" 
+                                                    <a href="<?= site_url('anime-detail.php?slug=' . $anime['slug']) ?>">
+                                                        <img src="<?= get_anime_poster($anime['poster_url']) ?>" 
                                                              alt="<?= htmlspecialchars($anime['title']) ?>" 
                                                              class="attachment-thumb size-thumb wp-post-image">
                                                         

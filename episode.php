@@ -1,59 +1,52 @@
 <?php
-require_once 'config.php';
+require_once 'includes/config.php';
 require_once 'includes/database.php';
 
 // Set page class for specific styling
 $page_class = 'streaming-episode-page';
 
-require_once 'includes/header.php';
+// Get episode parameters
+$anime_id = $_GET['anime_id'] ?? null;
+$episode_number = $_GET['episode'] ?? null;
 
-// Sample episode data - in real app this would come from database
-$episode_id = $_GET['id'] ?? 1;
-$episode_data = [
-    'id' => $episode_id,
-    'anime_title' => 'One Punch Man Season 3',
-    'episode_number' => 1,
-    'episode_title' => 'Sosai Saitama no Inchiki Ryokushi',
-    'release_date' => '2023-10-03 22:18',
-    'posted_by' => 'admin',
-    'video_embed' => 'https://example.com/embed/episode1',
-    'prev_episode' => null,
-    'next_episode' => 2,
-    'all_episodes' => [
-        1 => 'Episode 1 - Sosai Saitama no Inchiki Ryokushi',
-        2 => 'Episode 2 - Next Episode',
-        3 => 'Episode 3 - Another Episode',
-        4 => 'Episode 4 - Final Episode'
-    ],
-    'download_links' => [
-        'MP4' => [
-            '360p' => [
-                'Pdrain' => '#', 'Acefile' => '#', 'GoFile' => '#', 'Mega' => '#'
-            ],
-            '480p' => [
-                'Pdrain' => '#', 'Acefile' => '#', 'GoFile' => '#', 'Mega' => '#'
-            ],
-            '720p' => [
-                'Pdrain' => '#', 'Acefile' => '#', 'GoFile' => '#', 'Mega' => '#'
-            ]
-        ],
-        'MKV' => [
-            '480p' => [
-                'Pdrain' => '#', 'Acefile' => '#', 'GoFile' => '#', 'Mega' => '#'
-            ],
-            '720p' => [
-                'Pdrain' => '#', 'Acefile' => '#', 'GoFile' => '#', 'Mega' => '#'
-            ]
-        ]
-    ],
-    'anime_info' => [
-        'credit' => 'Doronime',
-        'encoder' => 'OtakuDesu Team',
-        'genres' => 'Action, Comedy, Superhero, Supernatural',
-        'duration' => '24 min per ep',
-        'type' => 'TV Series'
-    ]
-];
+if (!$anime_id || !$episode_number) {
+    header('Location: ' . site_url());
+    exit;
+}
+
+// Get episode data from database
+$episode_data = $db->getEpisode($anime_id, $episode_number);
+
+if (!$episode_data) {
+    header('Location: ' . site_url());
+    exit;
+}
+
+// Get anime info and all episodes
+$all_episodes = $db->getAnimeEpisodes($anime_id);
+$anime_genres = $db->getAnimeGenres($anime_id);
+$genre_names = array_column($anime_genres, 'name');
+
+// Find previous and next episodes
+$prev_episode = null;
+$next_episode = null;
+foreach ($all_episodes as $index => $ep) {
+    if ($ep['episode_number'] == $episode_number) {
+        if (isset($all_episodes[$index - 1])) {
+            $prev_episode = $all_episodes[$index - 1];
+        }
+        if (isset($all_episodes[$index + 1])) {
+            $next_episode = $all_episodes[$index + 1];
+        }
+        break;
+    }
+}
+
+// Set page meta info
+$page_title = htmlspecialchars($episode_data['anime_title']) . ' Episode ' . $episode_number . ' - Otaku Desu';
+$page_description = 'Nonton ' . htmlspecialchars($episode_data['anime_title']) . ' Episode ' . $episode_number . ' subtitle Indonesia online gratis.';
+
+require_once 'includes/header.php';
 ?>
 
 <div class="center">
@@ -67,8 +60,8 @@ $episode_data = [
                 
                 <!-- Posted by and Release info -->
                 <div class="kategoz">
-                    <span><i class="fa fa-user"></i> Posted by <?= htmlspecialchars($episode_data['posted_by']) ?></span>
-                    <span><i class="fa fa-clock-o"></i> Release on <?= date('g:i A', strtotime($episode_data['release_date'])) ?></span>
+                    <span><i class="fa fa-user"></i> Posted by admin</span>
+                    <span><i class="fa fa-clock-o"></i> Release on <?= date('g:i A', strtotime($episode_data['created_at'])) ?></span>
                 </div>
                 
                 <!-- Episode Navigation -->
@@ -76,18 +69,18 @@ $episode_data = [
                     <div class="fleft">
                         <select id="selectcog" onchange="changeEpisode(this.value)">
                             <option value="">Pilih Episode Lainnya</option>
-                            <?php foreach($episode_data['all_episodes'] as $ep_id => $ep_title): ?>
-                            <option value="<?= $ep_id ?>" <?= $ep_id == $episode_data['episode_number'] ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($ep_title) ?>
+                            <?php foreach($all_episodes as $episode): ?>
+                            <option value="<?= $episode['episode_number'] ?>" <?= $episode['episode_number'] == $episode_data['episode_number'] ? 'selected' : '' ?>>
+                                Episode <?= $episode['episode_number'] ?><?= !empty($episode['title']) ? ' - ' . htmlspecialchars($episode['title']) : '' ?>
                             </option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     
                     <div class="flir">
-                        <a href="<?= site_url('anime-detail.php?slug=one-punch-man-season-3') ?>">See All Episodes</a>
-                        <?php if($episode_data['next_episode']): ?>
-                        <a href="<?= site_url('episode.php?id=' . $episode_data['next_episode']) ?>">Next Eps</a>
+                        <a href="<?= site_url('anime-detail.php?slug=' . $episode_data['anime_slug']) ?>">See All Episodes</a>
+                        <?php if($next_episode): ?>
+                        <a href="<?= site_url('episode.php?anime_id=' . $anime_id . '&episode=' . $next_episode['episode_number']) ?>">Next Eps</a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -97,12 +90,19 @@ $episode_data = [
                     <div id="embed_holder">
                         <div class="player-embed">
                             <div class="responsive-embed-stream">
-                                <iframe src="<?= $episode_data['video_embed'] ?>" 
+                                <?php if (!empty($episode_data['video_url'])): ?>
+                                <iframe src="<?= htmlspecialchars($episode_data['video_url']) ?>" 
                                         width="100%" 
                                         height="100%" 
                                         frameborder="0" 
                                         allowfullscreen>
                                 </iframe>
+                                <?php else: ?>
+                                <div style="background: #000; color: white; text-align: center; padding: 100px; font-size: 18px;">
+                                    Video belum tersedia<br>
+                                    <small style="font-size: 14px; opacity: 0.7;">Episode akan segera diupload</small>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -152,57 +152,83 @@ $episode_data = [
             </div>
             
             <div class="download">
-                <h4><?= htmlspecialchars($episode_data['anime_title']) ?> Episode <?= $episode_data['episode_number'] ?> Subtitle Indonesia – [<?= $episode_data['anime_info']['credit'] ?>]</h4>
+                <h4><?= htmlspecialchars($episode_data['anime_title']) ?> Episode <?= $episode_data['episode_number'] ?> Subtitle Indonesia – [Doronime]</h4>
                 
-                <!-- MP4 Downloads -->
-                <?php foreach($episode_data['download_links']['MP4'] as $quality => $links): ?>
+                <!-- Sample Download Links -->
                 <ul>
                     <li>
-                        <strong>MP4 <?= $quality ?></strong>
-                        <?php foreach($links as $host => $link): ?>
-                        <a href="<?= $link ?>" target="_blank"><?= $host ?></a> |
-                        <?php endforeach; ?>
-                        <i>[<?= rand(80, 250) ?> MB]</i>
+                        <strong>MP4 360p</strong>
+                        <a href="#" target="_blank">Pdrain</a> |
+                        <a href="#" target="_blank">Acefile</a> |
+                        <a href="#" target="_blank">GoFile</a> |
+                        <a href="#" target="_blank">Mega</a>
+                        <i>[80 MB]</i>
                     </li>
                 </ul>
-                <?php endforeach; ?>
-                
-                <!-- MKV Downloads -->
-                <?php foreach($episode_data['download_links']['MKV'] as $quality => $links): ?>
                 <ul>
                     <li>
-                        <strong>MKV <?= $quality ?></strong>
-                        <?php foreach($links as $host => $link): ?>
-                        <a href="<?= $link ?>" target="_blank"><?= $host ?></a> |
-                        <?php endforeach; ?>
-                        <i>[<?= rand(150, 400) ?> MB]</i>
+                        <strong>MP4 480p</strong>
+                        <a href="#" target="_blank">Pdrain</a> |
+                        <a href="#" target="_blank">Acefile</a> |
+                        <a href="#" target="_blank">GoFile</a> |
+                        <a href="#" target="_blank">Mega</a>
+                        <i>[120 MB]</i>
                     </li>
                 </ul>
-                <?php endforeach; ?>
+                <ul>
+                    <li>
+                        <strong>MP4 720p</strong>
+                        <a href="#" target="_blank">Pdrain</a> |
+                        <a href="#" target="_blank">Acefile</a> |
+                        <a href="#" target="_blank">GoFile</a> |
+                        <a href="#" target="_blank">Mega</a>
+                        <i>[200 MB]</i>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>MKV 480p</strong>
+                        <a href="#" target="_blank">Pdrain</a> |
+                        <a href="#" target="_blank">Acefile</a> |
+                        <a href="#" target="_blank">GoFile</a> |
+                        <a href="#" target="_blank">Mega</a>
+                        <i>[150 MB]</i>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>MKV 720p</strong>
+                        <a href="#" target="_blank">Pdrain</a> |
+                        <a href="#" target="_blank">Acefile</a> |
+                        <a href="#" target="_blank">GoFile</a> |
+                        <a href="#" target="_blank">Mega</a>
+                        <i>[300 MB]</i>
+                    </li>
+                </ul>
             </div>
             
             <!-- Episode Info -->
             <div class="infozw">
-                <h3>Info Sosai Saitama no Inchiki Ryokushi Episode 1 Subtitle Indonesia</h3>
+                <h3>Info <?= htmlspecialchars($episode_data['anime_title']) ?> Episode <?= $episode_data['episode_number'] ?> Subtitle Indonesia</h3>
             </div>
             
             <div class="cukder">
-                <img src="<?= asset_url('images/no-image.jpg') ?>" alt="<?= htmlspecialchars($episode_data['anime_title']) ?>" />
+                <img src="<?= get_anime_poster('') ?>" alt="<?= htmlspecialchars($episode_data['anime_title']) ?>" />
                 
                 <div class="infozingle">
-                    <p><strong>Credit:</strong> <?= htmlspecialchars($episode_data['anime_info']['credit']) ?></p>
-                    <p><strong>Encoder:</strong> <?= htmlspecialchars($episode_data['anime_info']['encoder']) ?></p>
-                    <p><strong>Genres:</strong> <?= htmlspecialchars($episode_data['anime_info']['genres']) ?></p>
-                    <p><strong>Duration:</strong> <?= htmlspecialchars($episode_data['anime_info']['duration']) ?></p>
-                    <p><strong>Type:</strong> <?= htmlspecialchars($episode_data['anime_info']['type']) ?></p>
+                    <p><strong>Credit:</strong> Doronime</p>
+                    <p><strong>Encoder:</strong> OtakuDesu Team</p>
+                    <p><strong>Genres:</strong> <?= implode(', ', $genre_names) ?></p>
+                    <p><strong>Duration:</strong> <?= htmlspecialchars($episode_data['duration'] ?? '24 min') ?></p>
+                    <p><strong>Type:</strong> TV Series</p>
                 </div>
                 
                 <!-- Episode List Scrollable -->
                 <div class="keyingpost">
-                    <?php foreach($episode_data['all_episodes'] as $ep_id => $ep_title): ?>
-                    <li class="<?= $ep_id % 2 == 0 ? 'alternate' : '' ?>">
-                        <a href="<?= site_url('episode.php?id=' . $ep_id) ?>">
-                            <?= htmlspecialchars($ep_title) ?>
+                    <?php foreach($all_episodes as $index => $episode): ?>
+                    <li class="<?= $index % 2 == 0 ? '' : 'alternate' ?>">
+                        <a href="<?= site_url('episode.php?anime_id=' . $anime_id . '&episode=' . $episode['episode_number']) ?>">
+                            Episode <?= $episode['episode_number'] ?><?= !empty($episode['title']) ? ' - ' . htmlspecialchars($episode['title']) : '' ?>
                         </a>
                     </li>
                     <?php endforeach; ?>
@@ -250,9 +276,9 @@ $episode_data = [
 </div>
 
 <script>
-function changeEpisode(episodeId) {
-    if(episodeId) {
-        window.location.href = '<?= site_url('episode.php?id=') ?>' + episodeId;
+function changeEpisode(episodeNumber) {
+    if(episodeNumber) {
+        window.location.href = '<?= site_url('episode.php?anime_id=' . $anime_id . '&episode=') ?>' + episodeNumber;
     }
 }
 
