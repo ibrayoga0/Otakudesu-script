@@ -1,6 +1,5 @@
 <?php
 require_once 'includes/config.php';
-require_once 'includes/database.php';
 
 // Get search query
 $search_query = isset($_GET['q']) ? trim($_GET['q']) : '';

@@ -1,28 +1,19 @@
 <?php
-require_once 'config.php';
-require_once 'includes/database.php';
-require_once 'includes/header.php';
+require_once 'includes/config.php';
 
-// Sample ongoing anime data - in real app this would come from database
+$page_title = "Ongoing Anime - Otakudesu";
+$page_class = "ongoing-list";
+
+// Get real ongoing anime data from database
 $current_page = $_GET['page'] ?? 1;
 $items_per_page = 25;
-$total_anime = 125; // Sample total
+$ongoing_anime = $db->getOngoingAnime($items_per_page, ($current_page - 1) * $items_per_page);
+
+// Calculate total pages (for now use a sample count)
+$total_anime = 125; // In real implementation, you'd query the actual count
 $total_pages = ceil($total_anime / $items_per_page);
 
-$ongoing_anime = [];
-for ($i = 1; $i <= $items_per_page; $i++) {
-    $ongoing_anime[] = [
-        'id' => $i + (($current_page - 1) * $items_per_page),
-        'title' => 'Sample Ongoing Anime ' . ($i + (($current_page - 1) * $items_per_page)),
-        'japanese_title' => 'サンプルアニメ ' . ($i + (($current_page - 1) * $items_per_page)),
-        'image_url' => asset_url('images/no-image.jpg'),
-        'episode' => rand(1, 24),
-        'date' => date('j M'),
-        'days_ago' => rand(1, 7) . ' hari',
-        'rating' => number_format(rand(50, 100) / 10, 1),
-        'slug' => 'sample-ongoing-anime-' . ($i + (($current_page - 1) * $items_per_page))
-    ];
-}
+include 'includes/header.php';
 ?>
 
 <div class="center">
@@ -45,21 +36,25 @@ for ($i = 1; $i <= $items_per_page; $i++) {
                             <li>
                                 <div class="thumb">
                                     <a href="<?= site_url('anime-detail.php?slug=' . $anime['slug']) ?>">
-                                        <img src="<?= $anime['image_url'] ?>" 
+                                        <img src="<?= get_anime_poster($anime['poster_url']) ?>" 
                                              alt="<?= htmlspecialchars($anime['title']) ?>" 
                                              class="attachment-thumb size-thumb wp-post-image">
                                         
                                         <!-- Episode Badge -->
                                         <div class="epz">
-                                            <span class="dashicons dashicons-desktop"></span> Episode <?= $anime['episode'] ?>
+                                            <span class="dashicons dashicons-desktop"></span> 
+                                            <?php
+                                            $latest_episode = $anime['episode_count'] ?? 'Coming Soon';
+                                            echo $latest_episode > 0 ? "Episode $latest_episode" : "Coming Soon";
+                                            ?>
                                         </div>
                                         
                                         <!-- Date Badge -->
-                                        <div class="newnime"><?= $anime['date'] ?></div>
+                                        <div class="newnime"><?= date('j M') ?></div>
                                         
                                         <!-- Days Badge -->
                                         <div class="epztipe">
-                                            <i class="fa fa-star"></i> <?= $anime['days_ago'] ?>
+                                            <i class="fa fa-star"></i> -1 hari
                                         </div>
                                         
                                         <!-- Anime Title -->
@@ -111,4 +106,4 @@ for ($i = 1; $i <= $items_per_page; $i++) {
     </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

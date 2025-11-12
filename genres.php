@@ -1,8 +1,11 @@
 <?php
-require_once 'config.php';
+require_once 'includes/config.php';
 
-// Sample genres data
-$genres = [
+// Get real genres from database
+$genres = $db->getAllGenres();
+
+// Sample genres data - fallback if needed
+$sample_genres = [
     ['name' => 'Action', 'count' => 245],
     ['name' => 'Adventure', 'count' => 189],
     ['name' => 'Comedy', 'count' => 156],

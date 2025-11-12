@@ -85,12 +85,14 @@ class Database {
         $sql = "SELECT a.*, COUNT(e.id) as episode_count 
                 FROM anime a 
                 LEFT JOIN episodes e ON a.id = e.anime_id 
-                WHERE a.title LIKE :query OR a.japanese_title LIKE :query 
+                WHERE a.title LIKE :query1 OR a.japanese_title LIKE :query2 
                 GROUP BY a.id 
                 ORDER BY a.title ASC 
                 LIMIT :limit";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':query', '%' . $query . '%');
+        $search_term = '%' . $query . '%';
+        $stmt->bindValue(':query1', $search_term);
+        $stmt->bindValue(':query2', $search_term);
         $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
