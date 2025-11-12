@@ -67,20 +67,12 @@ include 'includes/header.php';
                                             <div class="set">
                                                 <b>Episode:</b> <?= $anime['episode_count'] ?? 'N/A' ?>
                                             </div>
-                                                <b>Rating:</b> <?= htmlspecialchars($anime['rating']) ?>
-                                            </div>
-                                            
-                                            <div class="set">
-                                                <b>Type:</b> <?= htmlspecialchars($anime['type']) ?>
-                                            </div>
-                                            
-                                            <div class="set">
-                                                <b>Tahun:</b> <?= htmlspecialchars($anime['year']) ?>
-                                            </div>
                                         </div>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
+                            <!-- Clear floats -->
+                            <div style="clear: both;"></div>
                         </div>
                     <?php else: ?>
                         <!-- No Results -->
