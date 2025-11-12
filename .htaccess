@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Homepage
+RewriteRule ^$ index.php [L]
+
+# Anime List
+RewriteRule ^anime-list/?$ pages/anime-list.php [L]
+
+# Ongoing Anime
+RewriteRule ^ongoing/?$ pages/ongoing.php [L]
+
+# Genre List
+RewriteRule ^genre/?$ pages/genre-list.php [L]
+RewriteRule ^genre/([a-z0-9-]+)/?$ pages/genre.php?slug=$1 [L]
+
+# Search
+RewriteRule ^search/?$ pages/search.php [L]
+
+# Anime Detail
+RewriteRule ^anime/([a-z0-9-]+)/?$ pages/anime-detail.php?slug=$1 [L]
+
+# Episode Streaming
+RewriteRule ^episode/([a-z0-9-]+)-episode-([0-9]+)/?$ pages/episode.php?anime=$1&ep=$2 [L]

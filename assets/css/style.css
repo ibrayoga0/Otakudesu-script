@@ -1,0 +1,2404 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171616;
+    color: #ffffff;
+    font-family: "Droid Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+a {
+    color: #00adff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* Top Navigation (Menux) */
+.menux {
+    background: #000000;
+    z-index: 99;
+    overflow: hidden;
+    height: 35px;
+    position: relative;
+}
+
+.menux .center {
+    padding: 0 10px;
+}
+
+.menux ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menux-left {
+    float: left;
+}
+
+.menux-right {
+    float: right;
+}
+
+.menux ul li {
+    display: inline-block;
+}
+
+.menux ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 13px;
+    z-index: 2;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.menux ul li a:hover {
+    background-color: #333;
+}
+
+/* Main Header */
+#header {
+    height: 100px;
+    background: #2A2A2A;
+    position: relative;
+}
+
+#header .center {
+    padding: 0 10px;
+}
+
+.logo {
+    float: left;
+    position: relative;
+    margin-top: 12px;
+}
+
+.logo img {
+    width: 230px;
+    height: 57.5px;
+}
+
+/* Navigation Menu */
+#menu {
+    margin: 0 auto 15px;
+    background: #222;
+    z-index: 99999;
+    border-bottom: 5px solid #00adff;
+    height: 52px;
+}
+
+.center {
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
+
+#cssmenu {
+    padding: 0;
+    position: relative;
+    margin: 0px auto 0px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#cssmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#cssmenu > ul > li {
+    width: auto;
+    float: left;
+}
+
+#cssmenu ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+
+#cssmenu ul li a {
+    color: #ffffff;
+    padding: 16px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#cssmenu ul li a:hover,
+#cssmenu ul li a.active {
+    background: #00ADFF;
+}
+
+/* Search Form */
+.search-form {
+    float: right !important;
+}
+
+.search-form form {
+    display: flex;
+    align-items: center;
+    padding: 9px 10px;
+}
+
+.search-form input {
+    background: #333;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 150px;
+}
+
+.search-form button {
+    background: #00adff;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Main Content */
+#venkonten {
+    overflow: hidden;
+    width: 1100px;
+    margin: 0px auto;
+    background: #171616;
+    padding: 10px;
+    min-height: 1110px;
+}
+
+.vezone {
+    overflow: hidden;
+}
+
+.venser {
+    overflow: hidden;
+    width: 69%;
+    float: left;
+}
+
+.venutama {
+    overflow: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+    float: right;
+    width: 30%;
+}
+
+.section {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.section h3 {
+    background: #333333;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 0 0 5px 0;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.section .content {
+    padding: 5px 0 0 0;
+    color: #ccc;
+}
+
+/* Sidebar Widget Styles */
+.widget {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.widget-title {
+    background: #333333;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 0 0 5px 0;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.widget-content {
+    padding: 5px 0 0 0;
+    color: #ccc;
+}
+
+/* Sidebar Lists */
+.recent-list, .popular-list {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.recent-list li, .popular-list li {
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+.recent-list li:last-child, .popular-list li:last-child {
+    border-bottom: none;
+}
+
+.recent-list a, .popular-list a {
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.recent-list a:hover, .popular-list a:hover {
+    color: #00adff;
+}
+
+/* Genre Tags in Sidebar */
+.genre-tags {
+    padding: 5px;
+}
+
+.genre-tag {
+    display: inline-block;
+    background: #555;
+    color: #ccc;
+    padding: 3px 8px;
+    margin: 2px;
+    font-size: 11px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.genre-tag:hover {
+    background: #00adff;
+    color: #fff;
+}
+
+/* Responsive Design for Sidebar */
+@media (max-width: 768px) {
+    #sidebar {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    
+    .venser {
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    .section {
+        margin-bottom: 10px;
+    }
+    
+    .genre-tag {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+}
+
+/* Info Update Bar */
+.infoupdate {
+    overflow: hidden;
+    margin: 0px auto;
+    background: #6a91ff;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Section Headers */
+.rvad {
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-bottom: 4px solid #00adff;
+    padding: 10px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.rvad h1 {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    display: block;
+}
+
+.iconf {
+    color: #fff;
+    font-size: 11px;
+    padding: 6px 12px;
+    background: #00adff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.iconf a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.iconf a:hover {
+    color: #fff !important;
+}
+
+.iconf:hover {
+    background: #0088cc;
+    color: #fff;
+}
+
+/* Anime Cards */
+.rseries .rapi .venz ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.rseries .rapi .venz ul:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.rseries .rapi .venz ul li {
+    padding-bottom: 5px;
+    width: 19%;
+    float: left;
+    margin-bottom: 11px;
+    margin: 0px 3px;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    height: 190px;
+}
+
+.rseries .rapi .venz ul li:hover {
+    z-index: 10;
+    overflow: visible;
+}
+
+.rseries .rapi .venz ul li .thumb {
+    position: relative;
+    display: block;
+    width: 141.58px;
+    height: 190px;
+}
+
+.rseries .rapi .venz ul li .thumb img {
+    width: 135.58px;
+    height: 180px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Episode Badge */
+.epz {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    height: 23px;
+    width: 93px;
+    top: 0;
+    left: 0;
+}
+
+.epz .dashicons {
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+    margin-right: 3px;
+}
+
+/* Date Badge */
+.newnime {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
+    padding: 2px;
+    font-size: 10px;
+    top: 0;
+    transform: translate(0, 130%);
+}
+
+/* Rating/Days Badge */
+.epztipe {
+    position: absolute;
+    z-index: 1;
+    background: rgba(24, 53, 245, 0.69);
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    height: 23px;
+    width: 62.52px;
+    top: 0;
+    right: 0;
+    transform: translate(0, 300%);
+    border-radius: 4px 0 0 4px;
+}
+
+.epztipe i {
+    width: 11.16px;
+    height: 12px;
+    font-size: 11px;
+    margin-right: 3px;
+}
+
+/* Anime Title */
+h2.jdlflm {
+    color: #fff;
+    bottom: 0px;
+    background: rgba(17, 17, 17, 0.63);
+    width: 100%;
+    font-weight: 500;
+    padding: 3px 5px;
+    font-size: 13px;
+    line-height: 20px;
+    position: absolute;
+    height: 25px;
+    transition: .3s linear;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.venz ul li .thumb a:hover h2.jdlflm {
+    height: auto;
+    min-height: 25px;
+    max-height: 65px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    transition: .3s linear;
+    z-index: 10;
+}
+
+/* Margin for Complete Anime Section */
+.complete-anime-section {
+    margin-top: 10px;
+}
+
+/* Anime Detail Page Styles */
+.anime-detail-page #venkonten {
+    width: 800px;
+}
+
+.anime-detail-page .venser {
+    width: 100%;
+    float: none;
+}
+
+.jdlrx {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 4px solid #00adff;
+}
+
+.jdlrx h1 {
+    font-size: 15px;
+    color: #e8e8e8;
+    margin: 0;
+}
+
+.subheading h2 {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background: #bfbfbf;
+    margin-bottom: 5px;
+    color: #171616;
+}
+
+.fotoanime {
+    margin: auto;
+    overflow: hidden;
+    float: left;
+    background-color: #2d2d2d;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.fotoanime img {
+    width: 190px;
+    height: 246px;
+    padding: 1px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.infozingle {
+    overflow: hidden;
+    width: 73%;
+    color: #adabab;
+    float: left;
+}
+
+.infozingle p {
+    margin: 5px 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.infozingle b {
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    width: 120px;
+}
+
+.sinopc {
+    clear: both;
+    margin-bottom: 20px;
+}
+
+.sinopc p {
+    line-height: 25px;
+    color: #adabab;
+    padding: 5px;
+    text-align: justify;
+}
+
+.episodelist {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.smokelister {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #6e7aff;
+}
+
+.monktit {
+    padding: 0 7px;
+    line-height: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 1px;
+    color: #fff;
+    float: left;
+    display: block;
+}
+
+.episodelist ul {
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.episodelist ul li {
+    line-height: 30px;
+    width: 100%;
+    font-size: 11px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0px 5px;
+    color: #c5c3c3;
+    background: #2a2a2a;
+}
+
+.episodelist ul li:nth-child(2n+1) {
+    background: #403c3c;
+}
+
+.episodelist ul li a {
+    color: #c5c3c3;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.episodelist ul li .zeebr {
+    float: left;
+}
+
+.episodelist ul li .rightplace {
+    float: right;
+    font-size: 11px;
+    color: #999;
+}
+
+.keyword {
+    font-size: 12px;
+    border-left: 3px solid #99C5EF;
+    border-right: 3px solid #99C5EF;
+    border-bottom: 3px solid #0f7ece;
+    border-top: 3px solid #0f7ece;
+    padding: 5px;
+    height: 30px;
+    line-height: 16px;
+    overflow: auto;
+    color: #d4cdcd;
+    margin-bottom: 10px;
+}
+
+.sharing {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.sharing ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sharing li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.sharing li a {
+    font-size: 13px;
+    float: left;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background: #eee;
+    border: 1px solid #ddd;
+    color: #444;
+    position: relative;
+    transition: .1s;
+    text-decoration: none;
+    display: block;
+}
+
+.sharing li a span.fa {
+    padding: 6px 10px;
+    border-radius: 3px;
+    background: #ddd;
+}
+
+.sharing li:nth-child(1) a span.fa {
+    color: #44B1E8;
+}
+
+.sharing li:nth-child(2) a span.fa {
+    color: #1DA1F2;
+}
+
+.sharing li:nth-child(3) a span.fa {
+    color: #DD4B39;
+}
+
+.sharing li:nth-child(4) a span.fa {
+    color: #0088CC;
+}
+
+.sharing li div.sharecount {
+    clear: both;
+    text-align: center;
+    display: block;
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    color: #333;
+    transition: .2s;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+#recommend-anime-series {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    clear: both;
+}
+
+#recommend-anime-series .judul-recommend-anime-series {
+    padding: 8px 5px;
+    border-bottom: 2px solid #3598DB;
+    background-color: #222222;
+    color: #EEEEEE;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+
+#recommend-anime-series .judul-recommend-anime-series h3.judul-konten {
+    margin: 0;
+    font-size: 14px;
+}
+
+#recommend-anime-series .isi-recommend-anime-series {
+    display: block;
+    overflow: hidden;
+    padding: 10px 5px;
+    background-color: #EEEEEE;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten {
+    float: left;
+    width: 20%;
+    overflow: hidden;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten {
+    display: block;
+    padding: 0 5px;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .isi-anime {
+    display: block;
+    padding: 3px 3px 0 3px;
+    border: 1px solid #DDD;
+    position: relative;
+    height: 165px;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .isi-anime img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .judul-anime {
+    position: absolute;
+    padding: 7px 0;
+    text-align: center;
+    left: 0;
+    cursor: pointer;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .judul-anime a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .judul-anime h2 {
+    font-size: 11px;
+    margin: 0;
+    color: #fff;
+}
+
+#show-comments {
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #7b7bfb;
+    border: solid 2px #7b7bfb;
+    width: 100%;
+    padding: 14px 0 14px 0;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Episode Streaming Page Styles */
+.streaming-episode-page #venkonten {
+    width: 800px;
+}
+
+.streaming-episode-page .venser {
+    width: 100%;
+    float: none;
+}
+
+.posttl {
+    font-size: 15px;
+    padding: 7px 0;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff;
+}
+
+.posttl h1 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.kategoz {
+    border-bottom: 4px solid #2a2a2a;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.kategoz span {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.kategoz i {
+    margin-right: 3px;
+}
+
+.prevnext {
+    margin: 6px 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.fleft {
+    float: left;
+}
+
+#selectcog {
+    padding: 6px 10px;
+    background: #2a2a2a;
+    width: 205px;
+    font-size: 12px;
+    font-family: "Droid Sans";
+    border: 2px solid #0065ad;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+#selectcog option {
+    padding: 5px;
+    line-height: 20px;
+    background: #333;
+    color: #ccc;
+}
+
+.flir {
+    float: right;
+    margin: 7px 0px;
+}
+
+.flir a {
+    border: 2px solid #0065ad;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.flir a:hover {
+    background: #0065ad;
+    color: #fff;
+}
+
+#lightsVideo {
+    position: relative;
+    z-index: 102;
+    margin: 10px 0;
+}
+
+#embed_holder {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.player-embed {
+    margin: auto;
+}
+
+.responsive-embed-stream {
+    position: relative;
+    padding-bottom: 51%;
+    padding-top: 44px;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.responsive-embed-stream iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#switch {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.lightSwitcher {
+    cursor: pointer;
+    z-index: 101;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.lightSwitcher label {
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+}
+
+.mirrorstream {
+    overflow: hidden;
+    margin: 10px 0;
+    background: #2a2a2a;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.mirrorstream div {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.mirrorstream span {
+    background: #0065ad;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.mirrorstream ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    min-width: 120px;
+}
+
+.mirrorstream li {
+    margin: 2px 0;
+}
+
+.mirrorstream li a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 2px 5px;
+    display: block;
+    font-size: 11px;
+}
+
+.mirrorstream li a:hover {
+    background: #555;
+    color: #fff;
+}
+
+.tambahan {
+    background: #333;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.download {
+    background: #2a2a2a;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 3px;
+}
+
+.download h4 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.download ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.download li {
+    background: #333;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.download strong {
+    color: #00adff;
+    font-weight: 600;
+    margin-right: 10px;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.download a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 3px;
+    padding: 2px 5px;
+    background: #555;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.download a:hover {
+    background: #0065ad;
+}
+
+.download i {
+    color: #999;
+    font-style: italic;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.infozw {
+    background: #333;
+    padding: 10px;
+    margin: 15px 0 5px 0;
+    border-radius: 3px;
+}
+
+.infozw h3 {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+}
+
+.cukder {
+    overflow: hidden;
+    background: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.cukder img {
+    width: 190px;
+    height: 246px;
+    padding: 1px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.cukder .infozingle {
+    overflow: hidden;
+    width: 50%;
+    color: #adabab;
+    float: left;
+    margin-right: 15px;
+}
+
+.cukder .infozingle p {
+    margin: 5px 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.cukder .infozingle strong {
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    width: 80px;
+}
+
+.keyingpost {
+    float: right;
+    width: 35%;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 3px;
+    max-height: 139px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.keyingpost li {
+    list-style: none;
+    padding: 3px 5px;
+    margin: 1px 0;
+    background: #2a2a2a;
+    border-radius: 2px;
+}
+
+.keyingpost li.alternate {
+    background: #404040;
+}
+
+.keyingpost a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 11px;
+    display: block;
+}
+
+.keyingpost a:hover {
+    color: #00adff;
+}
+
+/* Cinema Mode */
+.cinema-mode {
+    background: #000;
+}
+
+.cinema-mode #venkonten {
+    width: 100%;
+    max-width: none;
+    background: #000;
+}
+
+.cinema-mode #lightsVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #000;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0px 0;
+    border-radius: 4px;
+    line-height: 28px;
+    font-size: 14px;
+    border-radius: 0 !important;
+    font-weight: 600;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: 5px !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pagenavix {
+    display: inline-block;
+    text-align: center;
+}
+
+.pagenavix span {
+    padding: 4px 8px;
+    color: #666;
+    font-size: 13px;
+    background: #f1f1f1;
+    margin: 2px;
+    display: inline-block;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.pagenavix a {
+    padding: 4px 8px;
+    color: #666;
+    font-size: 13px;
+    background: #f1f1f1;
+    margin: 2px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.pagenavix a:hover {
+    background: #00adff;
+    color: #fff;
+}
+
+/* Sidebar Styles */
+.recent-list, .popular-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-list li, .popular-list li {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+}
+
+.recent-list li:last-child, .popular-list li:last-child {
+    border-bottom: none;
+}
+
+.recent-list a, .popular-list a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.recent-list a:hover, .popular-list a:hover {
+    color: #00adff;
+}
+
+.genre-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.genre-tag {
+    background: #555;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.genre-tag:hover {
+    background: #00adff;
+    color: #fff;
+}
+
+/* Footer */
+#footer {
+    padding: 10px;
+    background-color: #121212;
+    color: #ccc;
+    line-height: 30px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-top: 10px;
+    border-top: 3px solid #00adff;
+}
+
+#footzer {
+    overflow: hidden;
+    padding: 20px 0px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+#footzer .center {
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#footzer .stbwid {
+    float: left;
+    width: 30%;
+    line-height: normal;
+    margin: 8px 30px 15px 0;
+}
+
+#footzer .stbwid h4 {
+    color: #999999;
+    font-size: 14px;
+    margin: 0px 0px 5px;
+    padding: 7px 0px;
+    border-bottom: 4px solid #333;
+}
+
+#footzer .stbwid p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Credit */
+#credit {
+    overflow: hidden;
+    color: #999;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px;
+    background: #000;
+    text-shadow: 1px 1px 1px #000;
+    line-height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #venkonten {
+        width: 95%;
+    }
+    
+    .center {
+        max-width: 95%;
+    }
+    
+    .rseries .rapi .venz ul li {
+        width: 19%;
+        margin: 0px 3px;
+    }
+}
+
+@media (max-width: 992px) {
+    .rseries .rapi .venz ul li {
+        width: 23%;
+        margin: 0px 1%;
+    }
+}
+
+@media (max-width: 768px) {
+    .rseries .rapi .venz ul li {
+        width: 48%;
+        margin: 0px 1%;
+    }
+}
+
+@media (max-width: 480px) {
+    .venser {
+        width: 100%;
+        float: none;
+    }
+    
+    #sidebar {
+        width: 100%;
+        float: none;
+        margin-top: 20px;
+    }
+    
+    .rseries .rapi .venz ul li {
+        width: 48%;
+        margin: 0px 1%;
+    }
+    
+    #cssmenu ul li {
+        float: none;
+        width: 100%;
+    }
+    
+    .search-form {
+        float: none !important;
+        width: 100%;
+    }
+    
+    .menux-left,
+    .menux-right {
+        float: none;
+        text-align: center;
+    }
+    
+    .rvad {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .rvad h1 {
+        float: left;
+    }
+    
+    .iconf {
+        float: right;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .rseries .rapi .venz ul li {
+        width: 48%;
+        height: 160px;
+        margin: 0px 1%;
+    }
+    
+    .rseries .rapi .venz ul li .thumb {
+        height: 150px;
+    }
+    
+    .rseries .rapi .venz ul li .thumb img {
+        height: 150px;
+    }
+}
+
+/* Anime List Page Styles (Original Otakudesu Format) */
+.daftarkartun {
+    overflow: hidden;
+}
+
+.abjtext {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+.abjtext a {
+    display: block;
+    font-weight: 700;
+    padding: 4px 0;
+    width: 3.39%;
+    color: #e2e0e0;
+    font-size: 11px;
+    float: left;
+    margin: 1px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.abjtext a:hover,
+.abjtext a.active {
+    background: #00adff;
+    border-color: #00adff;
+    color: #fff;
+}
+
+#abtext {
+    overflow: hidden;
+}
+
+.bariskelom {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.barispenz {
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid #0065ad;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.barispenz a {
+    color: #e2e0e0;
+    text-decoration: none;
+}
+
+.penzbar {
+    line-height: 21px;
+    list-style: none;
+    color: #ccc;
+    overflow: hidden;
+}
+
+.jdlbar {
+    line-height: 21px;
+    font-weight: 700;
+    margin-right: 10px;
+    float: left;
+    width: 48%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 25px;
+    margin-bottom: 5px;
+}
+
+.jdlbar a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.jdlbar a:hover {
+    color: #00adff;
+}
+
+/* Anime List specific layout - Remove sidebar for full width */
+body.anime-list #venkonten .venser {
+    width: 100% !important;
+    float: none !important;
+}
+
+.abjtext {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.bariskelom {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.jdlbar a:hover {
+    color: #00adff;
+}
+
+/* Responsive Design for Anime List */
+@media (max-width: 768px) {
+    .abjtext a {
+        width: 6.5%;
+        font-size: 10px;
+        padding: 3px 0;
+    }
+    
+    .jdlbar {
+        width: 100%;
+        margin-bottom: 5px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .abjtext a {
+        width: 12%;
+        font-size: 9px;
+    }
+    
+    .barispenz {
+        font-size: 13px;
+        padding: 3px;
+    }
+    
+    .jdlbar {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+}
+
+/* Responsive Design for Alphabet Nav */
+@media (max-width: 768px) {
+    .alphabet-buttons {
+        justify-content: center;
+    }
+    
+    .alphabet-btn {
+        min-width: 35px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .anime-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .item-number {
+        align-self: flex-start;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .item-title {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    .item-status,
+    .item-rating {
+        margin-right: 0;
+    }
+}
+
+/* Genre List Styles (Original Otakudesu Format) */
+.genres {
+    overflow: hidden;
+    line-height: 21px;
+}
+
+.genres ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.genres li {
+    list-style: none;
+}
+
+.genres li a {
+    margin-right: 5px;
+    background: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 4px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 13px;
+    float: left;
+    width: 24%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    font-weight: 500;
+}
+
+.genres li a:hover {
+    background: #00adff;
+    color: #fff;
+    border-color: #00adff;
+}
+
+/* Genre List specific layout - Remove sidebar for full width */
+body.genre-list #venkonten .venser {
+    width: 100% !important;
+    float: none !important;
+}
+
+/* Responsive Design for Genre List */
+@media (max-width: 768px) {
+    .genres li a {
+        width: 48%;
+        margin-right: 2%;
+    }
+}
+
+@media (max-width: 480px) {
+    .genres li a {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}
+
+/* Genre Header Styles */
+.genre-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.genre-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.genre-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.genre-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.total-anime {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Anime Grid for Genre Page */
+.anime-grid-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.anime-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.anime-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-poster {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.anime-card:hover .card-poster img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.anime-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    background: #007bff;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #0056b3;
+    color: white;
+    transform: scale(1.1);
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.8);
+    color: #ffc107;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.anime-title {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.anime-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.anime-title a:hover {
+    color: #007bff;
+}
+
+.anime-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.episode-info {
+    color: #666;
+}
+
+.status-badge.ongoing {
+    background: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.complete {
+    background: #6c757d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Responsive Design for Genre Pages */
+@media (max-width: 768px) {
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .anime-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .card-poster {
+        height: 220px;
+    }
+    
+    .genre-header {
+        padding: 30px 20px;
+    }
+    
+    .genre-title {
+        font-size: 24px;
+    }
+    
+    .genre-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .card-poster {
+        height: 180px;
+    }
+    
+    .card-info {
+        padding: 10px;
+    }
+}
+
+/* Search Page Styles */
+.search-header {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.search-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.search-form {
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+.search-input-group {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: white;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #0056b3;
+}
+
+.search-info {
+    margin-top: 20px;
+}
+
+.search-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.result-count {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.search-results-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.search-result-card {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.search-result-card:hover {
+    background: white;
+    border-color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.15);
+}
+
+.result-poster {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    flex-shrink: 0;
+}
+
+.result-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-result-card:hover .result-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    background: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #0056b3;
+    color: white;
+    transform: scale(1.1);
+}
+
+.result-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-title {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.result-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.result-title a:hover {
+    color: #007bff;
+}
+
+.result-alt-title {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.result-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.meta-item {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.result-synopsis {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.result-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.episode-badge {
+    background: #007bff;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.status-badge.ongoing {
+    background: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.complete {
+    background: #6c757d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.no-results-icon {
+    font-size: 64px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.search-suggestions {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-suggestions h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.search-suggestions ul {
+    color: #666;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.search-suggestions li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Search Tips */
+.search-tips {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tips-content h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tip-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.tip-icon {
+    color: #007bff;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.tip-content h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.tip-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsive Design for Search */
+@media (max-width: 768px) {
+    .search-results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-result-card {
+        flex-direction: column;
+    }
+    
+    .result-poster {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .search-header {
+        padding: 30px 20px;
+    }
+    
+    .search-title {
+        font-size: 24px;
+    }
+    
+    .search-input-group {
+        border-radius: 8px;
+    }
+    
+    .search-input {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .search-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Search Results Page - Otakudesu Style */
+.chivsrc {
+    margin-top: 0px;
+    overflow: hidden;
+}
+
+.chivsrc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.chivsrc li {
+    padding-bottom: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    width: 48%;
+    float: left;
+    list-style: none;
+    height: 145px;
+    margin-right: 10px;
+    color: #fff;
+    background: #2a2a2a;
+    border: 1px solid #333;
+}
+
+.chivsrc li img {
+    float: left;
+    width: 120px;
+    height: 140px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding: 1px;
+}
+
+.chivsrc li .anime-info {
+    overflow: hidden;
+    padding: 5px;
+}
+
+.chivsrc h2 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.chivsrc h2 a {
+    color: #00adff;
+    text-decoration: none;
+}
+
+.chivsrc h2 a:hover {
+    color: #fff;
+}
+
+.chivsrc .set {
+    line-height: 20px;
+    font-size: 11px;
+    color: #ccc;
+    margin-bottom: 2px;
+}
+
+.chivsrc .set b {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Clear floats for search results */
+.chivsrc ul:after {
+    content: "";
+    display: table;
+    clear: both;
+}

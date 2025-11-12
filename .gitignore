@@ -1,0 +1,28 @@
+# Database configuration
+config.php
+
+# Log files
+*.log
+
+# Cache files
+cache/
+tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Uploads (if any)
+uploads/
+images/anime/

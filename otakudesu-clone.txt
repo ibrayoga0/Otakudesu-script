@@ -1,0 +1,1220 @@
+Fully Clone Otakudesu Website from select element, Otakudesu - Anime Streaming.
+Website Otakudesu itu tidak Full Width, jadi kecil website nya.
+
+1. Homepage
+-> Header, Saya melihat ada 2 Header jadi kayak Bar gitu, jadi paling atas posisinya, jadi dibawahnya ada Header original. ini Header saya namakan yang paling atas itu Header 1 kayak menux lah yah, namanya Menux.
+Header Menux, Size/ukuran 1905 x 35 Color Background #000000, ada seperti Menu "Cara Download" "DMCA" itu posisinya di kiri/left, dan juga ada menu lain yaitu "LAPOR LINK" dan "GRUP FB" yang posisinya di kanan, info lengkap di styles
+".menux {
+    background: #000000;
+    z-index: 99;
+    overflow: hidden;
+}
+.menux ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 13px;
+    z-index: 2;
+    display: inline-block;
+}"
+
+Div Header jadi disini kayak tempat logo nya, jadi dibawah Header Menux, posisinya itu di kiri/left. Ukuran/Size Header 1905 x 100 Color background #2A2A2A, Logo 230 x 57.5, info lengkap di styles
+"#header {
+    height: 100px;
+}
+.logo {
+    margin-top: 2%;
+}
+.logo {
+    float: left;
+    position: relative;
+    margin-top: 12px;
+}"
+
+Div Menu Header, Ukuran/Size 1905 x 52 Color background #222222 Margin 0px 0px 15px, Tempat menu ukurannya 1000 x 47, Ada menu HOME, ANIME LIST, JADWAL RILIS, ON-GOING ANIME, GENRE LIST, Dan Search form, padding list menu nya 16px 18px, untuk search form padding 9px 10px. Ada efek hover sepertinya saat kita sedang di home ataupun di anime list, ini color background nya #00ADFF. Oh iya satu lagi ada border bottom dibawah Div menu header, ini info nya border-bottom: 5px solid #00adff, info lengkap di styles
+"#menu {
+    margin: 0 auto 15px;
+    background: #222;
+    z-index: 99999;
+    border-bottom: 5px solid #00adff;
+}
+.center {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+#cssmenu {
+    padding: 0;
+    position: relative;
+    margin: 0px auto 0px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+#cssmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+#cssmenu > ul > li {
+    width: auto;
+}
+#cssmenu > ul > li {
+    float: left;
+}
+#cssmenu ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}"
+
+-> Footer, disini ada Footer dan juga Credit ya, jadi Credit paling bawah dan baru Footer diatas Credit.
+Footer, Ukuran/size 1905 x 180 color background #121212 margin 10px 0px 0px padding 10px ada border top nya ini info nya border-top: 3px solid #00adff, disini ada seperti penempatan list di footer nya jadi bukan menu link melainkan seperti text gitu ini tempatnya gitu, ukurannya 1885 x 157 padding 20px 0px, nah tempat text footer nya seperti about itu ukurannya seperti coloumn 1030 x 117 margin 0px 427.5px, nah ini isi text nya ukurannya 309 x 94 margin 8px 30px 15px 0px, Jadi ada About, Tips dan Info, ini sama ya untuk ukuran isinya ini kayak judul About gitu ukurannya 309 x 34 color #999999 font 14px margin 0px 0px 5px padding 7px 0px sama ya ukurannya untuk judul semuanya dan juga saya lupa ada Border bottom di Judul ini info nya border-bottom: 4px solid #333, dan untuk isi text nya seperti isi about nya jadi itu random sesuai text panjang dan pendeknya juga jadi kalo panjang ruangannya juga akan menjadi lebih besar, 309 x 45 Font 13px, info lengkap di styles
+"#footer {
+    padding: 10px;
+    background-position: bottom left;
+    background-color: #121212;
+    color: #ccc;
+    line-height: 30px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-top: 10px;
+    border-top: 3px solid #00adff;
+}
+#footzer {
+    overflow: hidden;
+    padding: 20px 0px;
+    font-size: 13px;
+    color: #bbb;
+}
+#footzer .center {
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 0;
+}
+#footzer .stbwid {
+    float: left;
+    width: 30%;
+    line-height: normal;
+    margin: 8px 30px 15px 0;
+}"
+
+Credit, sekarang footer Credit jadi tidak sekaligus di footer tetapi ada ruang sendirinya, ini ukuran nya div#credit 1905 x 36 color #999999 font 12px, background color #000000, padding 8px, dan di tengahnya nanti ada seperti contoh aslinya "All rights reserved © Copyright 2022, Otaku Desu. Created With [icon love] Powered by WordPress & Otaku Desu", info lengkap di styles
+"#credit {
+    overflow: hidden;
+    color: #999;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px;
+    background: #000;
+    text-shadow: 1px 1px 1px #000;
+    line-height: 20px;
+}"
+
+size/Ukuran isi Homepage nya, 1100 x 1110 background color #171616 padding 10px, info lengkap di styles
+"#venkonten {
+    overflow: hidden;
+    width: 1100px;
+    margin: 0px auto;
+    background: #171616;
+    padding: 10px;
+}"
+
+nah disini ukuran list seperti penempatan untuk section section jadi kayak kapasitasnya gitu, nah ukurannya 745.19 x 1090, info lengkap di styles
+".vezone {
+    overflow: hidden;
+}
+.venser {
+    overflow: hidden;
+    width: 69%;
+    float: left;
+}
+.venutama {
+    overflow: hidden;
+}"
+
+Ada sidebar juga sidebar di kanan ya ukurannya 324 x 191, untuk judul sidebar nya ukurannya 324 x 31 color #FFFFFF font 13px background color #333333 margin 0px 0px 5px padding 8px, isi nya ukurannya 324 x 145 padding 5px 0px 0px, info lengkap di styles
+"#sidebar {
+    float: right;
+    width: 30%;
+}
+.section {
+    margin-bottom: 10px;
+    overflow: hidden;
+}"
+
+nah sekarang isi dari list yang saya sudah bilang yaitu penempatan section section ya intinya kapasitas nah di isi dengan, yang paling atas itu ada
+Informasi seperti announcement website, kayak bar div.infoupdate ini ukurannya 745.19 x 38 color #000000 font 15px background color #6A91FF padding 10px, nah text nya di tengah yah, info lengkap di styles
+".infoupdate {
+    overflow: hidden;
+    margin: 0px auto;
+    background: #6a91ff;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}"
+
+Lanjut ada Section On-going Anime ini judul bar nya dan ukurannya div#rvod.rvad 745.19 x 36 background color #333333 margin 0px 0px 10px padding 7px, ini posisi/ukuran judulnya di kiri h1 115.56 x 18 color #FFFFFF font 15px, nah di kanannya ada judul lagi kayak button text gitu div.iconf 229.34 x 24 color #FFFFFF font 12px background color #1D41FD margin -3px padding 5px 21.9219px, tentunya ada border bottom border-bottom: 4px solid #00adff, info lengkap di styles
+".rvad {
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #00adff;
+    padding: 7px;
+    background: #333;
+}
+.rvad h1 {
+    font-size: 15px;
+}
+.rvad h1 {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    float: left;
+}
+.iconf {
+    font-size: 12px;
+    background: #1d41fd;
+    padding: 5px 3%;
+}
+.iconf {
+    float: right;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 5px;
+    margin: -3px;
+    background: #00adff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}"
+
+nah sekarang tinggal Anime Card nya ukurannya li 141.58 x 190 margin 0px 3px padding 0px 0px 5px ini saya tidak tahu ukuran apa tapi bisa kamu cari tahu ini img.attachment-thumb.size-thumb.wp-post-image 135.58 x 180 jadi list anime nya itu Grid layout 3 coloumn apa gimana sebutnya koreksi kalo salah jadi 1 baris ada 5 anime dan itu ada 3 baris ke bawah jadi masing masing 5 anime list jadi totalnya itu 15, nah di Anime Card itu ada badge ada Badge Episode, date, tentunya nama anime nya, saya akan berikan detail ukuran badge nya untuk Episode ini untuk background nya div.epz 93x23 color #FFFFFF font 12px background color #0000000A1 padding 4px tentunya isinya include icon juga kayak icon tv/komputer span.dashicons.dashicons-desktop::before 13 x 13, ini info dari styles nya untuk badge Episode
+".epz {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    height: 23px;
+    width: 93px;
+}"
+sekarang lanjut ke badge date, jadi formatnya itu kayak "10 Nov" gitu, ukurannya 39.47 x 19 info dari styles
+".newnime {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
+    padding: 4px;
+    font-size: 10px;
+    transform: translate(0, 130%);
+}"
+Lanjut badge days include icon, ukurannya 62.52 x 23, untuk icon nya itu i.fa-fa-star::before 11.16 x 12, info dari styles lengkapnya
+".epztipe {
+    position: absolute;
+    z-index: 1;
+    background: rgba(24, 53, 245, 0.69);
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    height: 23px;
+    right: 0px;
+    transform: translate(0, 300%);
+    border-radius: 4px 0 0 4px;
+}"
+Nah sekarang bagian nama anime nya jadi ini unik karena saat di sentuh itu ada hover background keatas untuk mendisplay nama anime yang mungkin panjang jadi saat di sentuh akan muncul full nama anime nya wah ini bagus sih, ini saat tidak di sentuh ukurannya h2.jdlflm 135.58 x 25 padding 3px 5px, posisi nama anime nya di tengah, ini info lengkap untuk nama anime nya beserta hover yang saya bicarakan,
+"h2.jdlflm {
+    color: #fff;
+    bottom: 0px;
+    background: rgba(17, 17, 17, 0.63);
+    width: 100%;
+    font-weight: 500;
+    padding: 3px 5px;
+    font-size: 13px;
+    line-height: 20px;
+    position: absolute;
+    height: 25px;
+    transition: .3s 
+linear;
+    text-align: center;
+}"
+setelah muncul hover seperti yang saya bicarakan ini info dari styles
+".venz ul li .thumb a:hover h2.jdlfm {
+    height: 65px;
+    transition: .3s linear;
+}
+
+h2.jdlfm {
+    color: #fff;
+    bottom: 0px;
+    background: rgba(17, 17, 17, 0.63);
+    width: 100%;
+    font-weight: 500;
+    padding: 3px 5px;
+    font-size: 13px;
+    line-height: 20px;
+    position: absolute;
+    height: 25px;
+    transition: .3s linear;
+    text-align: center;
+}
+info lengkap card anime nya
+.rseries .rapi .venz ul li {
+    padding-bottom: 5px;
+    width: 19%;
+    float: left;
+    margin-bottom: 11px;
+    margin: 0px 3px;
+    list-style: none;
+    position: relative;
+    overflow: inherit;
+    height: 190px;
+}"
+
+Nah untuk Section On-going anime sudah, nah jadi ada 1 section lagi tapi itu sama kok Judulnya itu "Complete Anime" di kiri dan di kanannya ada seperti button text "CEK ANIME SELESAI LAINNYA", dan card nya sama, tapi untuk badge di section Complete Anime itu berbeda ya, jadi di bagian kalo tadi di section On-going itu Badge days, nah di Complete anime bukan badge days melainkan berbeda menjadi Badge Rating 45.33 x 32, tentunya dengan icon star sama kayak section On-going anime, jadi format untuk di section Complete Anime badge ratingnya contoh format "5.89" ini info lengkap dari styles
+".epztipe {
+    position: absolute;
+    z-index: 1;
+    background: rgba(24, 53, 245, 0.69);
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    height: 23px;
+    right: 0px;
+    transform: translate(0, 300%);
+    border-radius: 4px 0 0 4px;
+}
+Sesudah di section On-going anime nah dibawahnya itu akan ada section Complete Anime nah itu di bawahnya ada margin ini info dari styles
+element.style {
+    margin-top: 10px;
+}
+
+Sekarang lanjut ke page, Anime List tentunya sama ini info di styles nya, ini luarnya
+#venkonten {
+    overflow: hidden;
+    width: 1100px;
+    margin: 0px auto;
+    background: #171616;
+    padding: 10px;
+}
+nah ini baru isi page/kontennya
+.vezone {
+    overflow: hidden;
+}
+tentunya ada judul "Anime List" ini info nya
+.rvad {
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #00adff;
+    padding: 7px;
+    background: #333;
+}
+isi text nya
+.rvad h1 {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    float: left;
+}
+nah ini isi Anime List
+.daftarkartun {
+    overflow: hidden;
+}
+list abjad text contoh format # A B C D E etc
+.abjtext {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+format text abjad nya
+.abjtext a {
+    display: block;
+    font-weight: 700;
+    padding: 4px 0;
+    width: 3.39%;
+    color: #e2e0e0;
+    font-size: 11px;
+    float: left;
+    margin: 1px;
+    border: 1px solid #ccc;
+}
+ini isi Anime list nya
+#abtext {
+    overflow: hidden;
+}
+ini ukuran isi anime list nya sesuai abjad
+.bariskelom {
+    position: relative;
+    margin-bottom: 10px;
+}
+ini list judul sesuai abjad
+.barispenz {
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid #0065ad;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    position: relative;
+}
+text color
+.barispenz a {
+    color: #e2e0e0;
+}
+ini saya tidak tahu apa mungkin kayak titik tengah gitu
+.penzbar {
+    line-height: 21px;
+    list-style: none;
+    color: #ccc;
+}
+ini isi list anime nya
+.jdlbar {
+    width: 48%;
+    padding-left: 25px;
+}
+.jdlbar {
+    line-height: 21px;
+    font-weight: 700;
+    margin-right: 10px;
+    float: left;
+    width: 48%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}"
+
+page JADWAL RILIS comingsoon sementara.
+
+Sekarang ON-GOING ANIME, list all On-going anime view all, ya sama pokoknya isi nya dan juga card nya sama kayak On-Going Anime, dan ada sidebar nya juga, nah tapi ada yang berbeda dari judulnya dan juga ada pagging seperti 1,2,3 next.
+intinya kayaknya sama gitu judulnya
+.rvad {
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #00adff;
+    padding: 7px;
+    background: #333;
+}
+jadi Judul di kiri yaitu "List & Jadwal Anime Ongoing" dan di kanan ada text "ANIME TERBARU"
+.iconf {
+    float: right;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 5px;
+    margin: -3px;
+    background: #00adff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+pagination
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0px 0;
+    border-radius: 4px;
+}
+.pagination {
+    line-height: 28px;
+    font-size: 14px;
+    border-radius: 0 !important;
+    font-weight: 600;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: 5px !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.pagenavix span {
+    padding: 4px 8px;
+    color: #666;
+    font-size: 13px;
+    background: #f1f1f1;
+    margin: 2px;
+}
+.pagenavix a {
+    padding: 4px 8px;
+    color: #666;
+    font-size: 13px;
+    background: #f1f1f1;
+    margin: 2px;
+}
+dan untuk Ongoing anime list itu list anime yang muncul 25 ya, jadi barisnya itu 5 sama ya.
+
+Sekarang kita lanjut ke Genre List, tentunya sama ya, judulnya sesuai yaitu Genre List, ini isi/format genre nya
+.genres {
+    overflow: hidden;
+    line-height: 21px;
+}
+ol, ul {
+    margin-top: 0;
+}
+.linken li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+list nya
+.genres li {
+    list-style: none;
+}
+format genre
+.genres li a {
+    margin-right: 5px;
+    background: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 4px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 13px;
+    float: left;
+    width: 24%;
+}
+tentunya di Genre List ada sidebar nya, oke lanjut nah masih di genre tetapi kayak fungsi nya yaitu Daftar genre dari contoh genre Action otomatis akan muncul anime dengan genre tersebut, nah untuk daftar genre nya ini pake sama kayak On-Going Anime dan Anime Selesai List nya jadi di campur, oh iya saya belum memberikan informasi terkait List Anime Complete, ya itu sama aja kayak On-Going anime pokoknya sama, tetapi berbeda aja di badge nya jadi di Complete anime itu badge nya rating, kalo di On-going anime itu badge nya days, sama list anime 25 dan 5 baris.
+
+Nah lanjut kita ke page search nya, untuk judul bar nya itu sama ya, jadi judul nya di otakudesu itu ini text judul nya "[icon search] Hasil Pencarian (Max. hanya sampai 12 hasil)" cuma itu saja tidak ada text apa apa lagi, nah jadi di search itu beda jadi ada Card beda lagi untuk Search, ini info nya
+.chivsrc {
+    margin-top: 0px;
+}
+ini anime card nya jadi posternya di kiri dan di kanannya itu detail mulai dari nama, genres, status, rating
+element.style {
+    list-style: none;
+}
+.chivsrc li {
+    padding-bottom: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    width: 48%;
+    float: left;
+    list-style: none;
+    height: 145px;
+    margin-right: 10px;
+    color: #fff;
+}
+poster
+.chivsrc li img {
+    float: left;
+    width: 120px;
+    height: 140px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding: 1px;
+}
+detail nama anime
+.chivsrc h2 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+detail genre
+.set {
+    line-height: 20px;
+}
+same
+.chivsrc li {
+    padding-bottom: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    width: 48%;
+    float: left;
+    list-style: none;
+    height: 145px;
+    margin-right: 10px;
+    color: #fff;
+}
+nah ini juga grid layout jadi list anime nya itu 15 max nya, nah jadi 1 baris itu 2 anime bukan 5 anime untuk page search ya khusus jadi berbeda beda. ini ukuran page nya
+div.page 745.19 x 1267
+tentunya ada sidebar, tapi tidak ada pagging ya.
+
+Ok sekarang kita lanjut ke Anime Detail page nya, ini ukurannya di luar jadi belum di konten anime detail nya 800 x 1211
+#venkonten {
+    width: 800px;
+}
+#venkonten {
+    overflow: hidden;
+    width: 1100px;
+    margin: 0px auto;
+    background: #171616;
+    padding: 10px;
+}
+ini background lagi
+.vezone {
+    overflow: hidden;
+}
+ini konten anime detail nya 780 x 1191
+.venser {
+    width: 100%;
+}
+.venser {
+    overflow: hidden;
+    width: 69%;
+    float: left;
+}
+Judul Anime nya 780 x 27
+.jdlrx {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 4px solid #00adff;
+}
+.jdlrx h1 {
+    font-size: 15px;
+    color: #e8e8e8;
+}
+Ini kayak subjudul jadi template gitu nantinya di semua anime detail, contoh format "Streaming One Punch Man Season 3 Sub Indo" jadi value nya "Streaming [Nama Anime] Sub Indo"
+subheading 780 x 35
+.subheading h2 {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background: #bfbfbf;
+    margin-bottom: 5px;
+    color: #171616;
+}
+ini detail anime nya yaitu Poster beserta detail seperti judul, studio dan semacamnya, di kiri poster anime nya dan di kanan detail nya, informasi detail nya
+Judul, Japanase, Rating, Produser, Type, Status, Total Episode, Durasi, Tanggal Rilis, Studio, Genre, itu detail nya dan ini ukuran untuk konten anime detail nya beserta poster 780 x 246
+element.style {
+    overflow: inherit !important;
+}
+.fotoanime {
+    margin: auto;
+    overflow: hidden;
+    float: left;
+    background-color: #2d2d2d;
+    width: 100%;
+}
+poster
+.fotoanime img {
+    width: 190px;
+    height: 246px;
+    padding: 1px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+info detail di kanan 569.39 x 242
+.infozingle {
+    overflow: hidden;
+    width: 73%;
+    color: #adabab;
+}
+lupa di anime detail itu ada Synopsis nya 780 x 175
+.sinopc p {
+    line-height: 25px;
+    color: #adabab;
+    padding: 5px;
+}
+
+Lanjut dibawahnya ada list untuk Episode Batch jadi admin bisa menambahkan batch ataupun tidak, dengan template tentunya dan value "[Nama Anime] Batch" 780 x 30
+.episodelist {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.smokelister {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #6e7aff;
+}
+text ataupun isinya mungkin
+.monktit {
+    padding: 0 7px;
+    line-height: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 1px;
+    color: #fff;
+    float: left;
+    display: block;
+}
+Lanjut di bawahnya ada episode list nya jadi bukan batch tadi episode list batch ya, sekarang episode list nya, tentunya template dan value "[Nama Anime] Episode List (Link Download Episode & Streaming)" coloumn 780 x 185
+.episodelist {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+bar judul 780 x 30
+.smokelister {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #6e7aff;
+}
+text judul
+.monktit {
+    padding: 0 7px;
+    line-height: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 1px;
+    color: #fff;
+    float: left;
+    display: block;
+}
+list episode nya tentunya sama template "[Nama Anime][Episode berapa contoh 1] Subtitle Indonesia)" nanti jadinya begini "One Piece Episode 1 Subtitle Indonesia" tentunya ada info date otomatis saat publish episode atau update, contoh format "12 Oktober, 2025" posisi date nya di kanan.
+.episodelist ul {
+    overflow: hidden;
+    display: block;
+}
+format episode
+.episodelist ul li:nth-child(2n+1) {
+    background: #403c3c;
+}
+.episodelist ul li {
+    line-height: 30px;
+    width: 100%;
+    font-size: 11px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0px 5px;
+    color: #c5c3c3;
+}
+.episodelist ul li a {
+    color: #c5c3c3;
+    font-size: 13px;
+}
+Nah lanjut sekarang di bawahnya ada lagi yaitu Tags gitu tidak ada judulnya ya jadi langsung kolom tags gitu contoh tags nya itu otomatis "Streaming One Punch Man Season 3 Sub Indo, One Punch Man Season 3 resolusi 240p 360p 480p 720p format Mp4 dan Mkv Sub Indo, Download One Punch Man Season 3 Sub Indo, Nonton One Punch Man Season 3, Download dan Streaming One Punch Man Season 3 Subtitle Indonesia, One Punch Man Season 3 Episode 1 - Unknown (End) Sub Indo, One Punch Man Season 3 Subtitle Indonesia"
+Keyword mungkin apa tags tidak tahu saya,jadi nanti pake scroll gitu Vertikal dengan button kecil di ujung kanan, ukuran tags/keyword 780 x 30
+.keyword {
+    font-size: 12px;
+    border-left: 3px solid #99C5EF;
+    border-right: 3px solid #99C5EF;
+    border-bottom: 3px solid #0f7ece;
+    border-top: 3px solid #0f7ece;
+    padding: 5px;
+    height: 30px;
+    line-height: 16px;
+    overflow: auto;
+    color: #d4cdcd;
+    margin-bottom: 10px;
+}
+Kita lanjut dibawahnya masih ada yaitu Share, judulnya contoh "Jangan Lupa Bantu Share Anime One Punch Man Season 3 Sub Indo ke teman kalian ya." ini subheading nya nah nanti dibawahnya akan ada icon sosial media dengan button share now, ini untuk judul subheading nya ukurannya 780 x 35
+.subheading h2 {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background: #bfbfbf;
+    margin-bottom: 5px;
+    color: #171616;
+}
+Share
+.sharing, h1.title1 {
+    margin-bottom: 10px;
+}
+format share
+.sharing li a {
+    font-size: 13px;
+    float: left;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background: #eee;
+    border: 1px solid #ddd;
+    color: #444;
+    position: relative;
+    transition: .1s;
+}
+icon sosial media
+.sharing li:nth-child(1) span.fa {
+    color: #44B1E8;
+}
+
+.sharing li a span.fa {
+    padding: 6px 10px;
+    border-radius: 3px;
+    background: #ddd;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+text "Share Now"
+.sharing li div.sharecount {
+    clear: both;
+    text-align: center;
+    display: block;
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    color: #333;
+    transition: .2s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+Oke lanjut masih ada di bawahnya itu Rekomendasi Anime lainnya jadi ini Random, dan tentunya ini akan menggunakan card anime tetapi berbeda ya untuk Rekomendasi anime lainnya, jadi simple poster dan tidak ada badge apa apa, dan tentunya nama anime nya sama kayak anime card lainnya di homepage ya, dan max list yang muncul anime nya di Rekomendasi Anime Lainnya itu adalah 5.
+ini ukuran coloumn Rekomendasi anime lainnya 780 x 218
+#recommend-anime-series {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+}
+background bar untuk judul "Rekomendasi Anime Lainnya"
+#recommend-anime-series .judul-recommend-anime-series {
+    padding: 8px 5px;
+    border-bottom: 2px solid #3598DB;
+    background-color: #222222;
+    color: #EEEEEE;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+judul format
+#recommend-anime-series .judul-recommend-anime-series h3.judul-konten {
+    margin: 0;
+}
+Isi anime list rekomendasi nya 780 x 185
+#recommend-anime-series .isi-recommend-anime-series {
+    display: block;
+    overflow: hidden;
+    padding: 10px 5px;
+    background-color: #EEEEEE;
+}
+Anime card nya 154 x 165
+#recommend-anime-series .isi-recommend-anime-series .isi-konten {
+    float: left;
+    width: 20%;
+    overflow: hidden;
+}
+poster 154 x 165
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten {
+    display: block;
+    padding: 0 5px;
+}
+detail anime card 144 x 165
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .isi-anime {
+    display: block;
+    padding: 3px 3px 0 3px;
+    border: 1px solid #DDD;
+    position: relative;
+}
+judul anime
+#recommend-anime-series .isi-recommend-anime-series .isi-konten .gambar-konten .judul-anime {
+    position: absolute;
+    padding: 7px 0;
+    text-align: center;
+    left: 0;
+    cursor: pointer;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+Oke lanjut terkahir ini dibawahnya itu ada opsi untuk Komentar, tapi disini jadi default nya itu ditutup komentarnya jadi harus di pencet agar kayak kita menyalakan komentar gitu, ukuran coloumn bar komentar 780 x 53
+"Nyalakan Komentar"
+#show-comments {
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #7b7bfb;
+    border: solid 2px;
+    width: 100%;
+    padding: 14px 0 14px 0;
+    margin-top: 5px;
+}
+
+Ok sudah untuk Anime Detail, lanjut ke Streaming Episode page nya.
+Ini ukuran/size streaming page 800 x 1660.8
+#venkonten {
+    width: 800px;
+}
+#venkonten {
+    overflow: hidden;
+    width: 1100px;
+    margin: 0px auto;
+    background: #171616;
+    padding: 10px;
+}
+.vezone {
+    overflow: hidden;
+}
+size/ukuran konten streaming page 780 x 957.8
+.venser {
+    width: 100%;
+}
+.venser {
+    overflow: hidden;
+    width: 69%;
+    float: left;
+}
+div.venutama namanya apa ya jadi kayak batasan seperti ruangan luar gitu namanya apa ya bisa kamu koreksi, nah ini include Nama anime, posted by and date release, Video player dan Mirror player. size 780 x 626.8
+.venutama {
+    overflow: hidden;
+}
+Judul nama Anime size 780 x 33
+.posttl {
+    font-size: 15px;
+    padding: 7px 0;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff;
+}
+Kategory Posted by dan date Release, format "[icon user 9.3 x 13] Posted by [user] [icon clock 11.16 x 13] Release on [date example 10:18 pm]" size Kategori 780 x 29
+.kategoz {
+    border-bottom: 4px solid #2a2a2a;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+format text
+.kategoz span {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #fff;
+}
+Lanjut Prevnext seperti "Pilih Episode Lainnya" dengan dropdown saat di klik list all episode posisi di kiri, di kanan ada "See All Episodes" mengarahkannya ke anime detail, dan ada "Next Eps" kalo ada episode selanjutnya, size 780 x 32
+.prevnext {
+    margin: 6px 0;
+    overflow: hidden;
+}
+"Pilih Episode Lainnya"
+.fleft {
+    float: left;
+}
+Style/format episode lainnya
+#selectcog {
+    padding: 6px 10px;
+    background: #2a2a2a;
+    width: 205px;
+    font-size: 12px;
+    font-family: "Droid Sans";
+    border: 1px solid #444;
+    color: #ccc;
+    margin-right: 5px;
+    border: 2px solid #0065ad;
+}
+dropdown text
+option {
+    padding: 5px;
+    line-height: 20px;
+    background: #333;
+}
+"See All Episodes" and "Next Eps" size 196.25 x 15
+.flir {
+    float: right;
+    margin: 7px 0px;
+}
+"See All Episodes" format/text
+.flir a {
+    border: 2px solid #0065ad;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+"Next Eps" format/text
+.flir a {
+    border: 2px solid #0065ad;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+Lanjut ke tempat Video Player nya dibawah, size 780 x 441.8
+#lightsVideo {
+    position: relative;
+    z-index: 102;
+}
+element.style {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+position embed holder
+#embed_holder {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.player-embed {
+    margin: auto;
+}
+.responsive-embed-stream {
+    position: relative;
+    padding-bottom: 51%;
+    padding-top: 44px;
+    height: 0;
+    overflow: hidden;
+}
+di bawah kanan ada button switch "CINEMA ON/OFF" default off, size 82.56 x 14
+#switch {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.lightSwitcher {
+    cursor: pointer;
+    z-index: 101;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    background: #dc0a00;
+    color: #fff;
+    font-weight: 600;
+}
+#switch a {
+    color: #fff;
+}
+ON/OFF
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+lanjut dibawahnya Horizontal Mirror stream, terdiri dari Mirror 360p, 480p, 720p, size 780 x 28
+element.style {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.mirrorstream {
+    overflow: hidden;
+    margin-top: 10px;
+}
+format
+.mirrorstream .m360p {
+    background: #727679;
+}
+
+.mirrorstream ul {
+    line-height: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #eee;
+    text-decoration: none;
+    display: inline-block;
+    width: 32%;
+    margin-left: 5px;
+    float: left;
+    cursor: pointer;
+    padding: 4px;
+}
+.mirrorstream span {
+    font-size: 16px !important;
+    line-height: 18px;
+}
+.dashicons, .dashicons-before:before {
+    font-family: dashicons;
+    display: inline-block;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    speak: never;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s 
+ease-in;
+}
+saat di pencet itu akan ada animasi menampilkan list player semuanya, 
+element.style {
+    display: list-item;
+}
+.mirrorstream .m360p {
+    background: #727679;
+}
+.mirrorstream ul {
+    line-height: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #eee;
+    text-decoration: none;
+    display: inline-block;
+    width: 32%;
+    margin-left: 5px;
+    float: left;
+    cursor: pointer;
+    padding: 4px;
+}
+.mirrorstream span {
+    font-size: 16px !important;
+    line-height: 18px;
+}
+.dashicons, .dashicons-before:before {
+    font-family: dashicons;
+    display: inline-block;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    speak: never;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s 
+ease-in;
+}
+Lanjut dibawah ada informasi tetap bila ada Mirror streaming dan link download error bisa gunakan mirror dan link alternative yang tersedia, size 780 x 24
+.tambahan {
+    border-left: 4px solid #47516E;
+    border-bottom: 4px solid #0f7ece;
+    padding-left: 7px;
+    padding-bottom: 5px;
+    transition: .3s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #c5c5c5;
+}
+text informasi mirror " Jika Mirror Streaming dan Link Download Error, silahkan gunakan Mirror dan Link alternative lainnya."
+Lanjut dibawah ada Subheading judul untuk Link download dari anime tersebut sesuai episode, size 780 x 35 Judul contoh "Link Download Chanto Suenai Kyuuketsuki-chan Episode 1 Sub Indo Lengkap"
+.subheading h2 {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background: #bfbfbf;
+    margin-bottom: 5px;
+    color: #171616;
+}
+Lanjut dibawahnya ada list Download episode yang disediakan admin, ruangannya size div.download 780 x 232
+.download {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+Judul contoh "Chanto Suenai Kyuuketsuki-chan Episode 1 Subtitle Indonesia – [Doronime]"
+.download h4 {
+    font-size: 13px;
+    padding: 5px;
+    background: #6e7aff;
+    color: #fff;
+    border-left: 5px solid #47516E;
+}
+Isi coloumn download Mp4
+.download ul {
+    margin: 5px 0;
+    background: #f9f9f9;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+}
+format single contoh Mp4 360p Pdrain | Acefile | GoFile" and more | [total size MB]"
+.download li {
+    margin-bottom: 3px;
+    display: block;
+}
+Mp4 360p and yang lainnya, judul
+.download strong {
+    background: #5a5856;
+    padding: 5px 5px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+}
+Link download Pdrain and more link format
+.download a {
+    padding: 0 10px 0 8px;
+    color: #2168B0;
+    border-right: 1px dashed #377BC0;
+}
+format size MB
+.download i {
+    width: 108px;
+    background: #5a5856;
+    display: inline-block;
+    padding: 5px 2px;
+    text-align: center;
+    color: #fff;
+}
+for MKV same
+.download ul {
+    margin: 5px 0;
+    background: #f9f9f9;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+}
+MKV 360p and more resolution same format and style.
+lanjut dibawahnya ada Kategory sama seperti sebelumnya yang kita bahas di Anime detail.
+Lanjut lagi dibawahnya ada Info mengenai Anime nya, judul Info anime size 780 x 34
+.infozw {
+    background: #333;
+    color: #eaeaea;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+Info anime detail Poster and episode list, Poster Anime di kiri dan detail nya di kanan, detail episode ada Credit, Encoder, Genres, Duration, Type, dan Episode list all dengan scrolling, size 780 x 249
+.cukder {
+    margin: auto;
+    overflow: hidden;
+    background-color: #2d2d2d;
+}
+Poster size/position 190 x 246
+.cukder img {
+    width: 190px;
+    height: 246px;
+    padding: 1px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+Detail Credit, encoder etc
+.infozingle {
+    overflow: hidden;
+    width: 73%;
+    color: #adabab;
+}
+format
+.infozingle p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0px;
+    line-height: 22px;
+    color: #adabab;
+    padding: 0px;
+}
+Episode list all 580 x 139
+.keyingpost {
+    font-size: 12px;
+    border-left: 3px solid #99C5EF;
+    border-right: 3px solid #99C5EF;
+    border-bottom: 3px solid #0f7ece;
+    border-top: 3px solid #0f7ece;
+    padding: 5px;
+    height: 139px;
+    line-height: 25px;
+    overflow: auto;
+    color: #fff;
+}
+format
+.keyingpost li:nth-child(2n+1) {
+    background: #403c3c;
+}
+text
+.keyingpost a {
+    color: #c2c8ce;
+}
+Oke lanjut di bawahanya ada Share jadi sama kayak Anime detail, tetapi judulnya berbeda ya, contoh "Jangan lupa share Chanto Suenai Kyuuketsuki-chan Episode 1 Subtitle Indonesia ke temanmu ya."
+intinya sama, dan di bawahnya lagi juga itu tempat komentar yang di sembunyikan jadi harus di nyalakan komentar di pencet, itu sama.
+Di Streaming episode tidak ada sidebar.
